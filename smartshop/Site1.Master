@@ -1,0 +1,241 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="smartshop.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+     
+    
+    <title></title>
+    <%-- bootstrap--%>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="customcss/style.css" rel="stylesheet" />
+
+    <%-- data tables--%>
+    <link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+    <%-- fontawsome--%>
+    <link href="fontawsome/css/all.css" rel="stylesheet" />
+
+  <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="bootstrap/js/popper.min.js"></script>
+   <script src="bootstrap/js/bootstrap.min.js"></script>
+   
+      
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body  >
+   
+    <form id="form1" runat="server">
+        
+        <div >
+            <nav class="navbar navbar-expand-lg bg-dark text-white navbar-light">
+                <a class="navbar-brand bg-dark text-white" href="#">
+                   
+                 Smart Dairy and Sweet Shop
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                 <div class="collapse navbar-collapse bg-dark text-white" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto bg-dark text-white">
+                        <li class="nav-item active">
+                            <a class="nav-link btn btn-dark text-white" href="homepage.aspx">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link btn btn-dark  text-white" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link btn btn-dark  text-white" href="#">Terms</a>
+                        </li>
+
+                    </ul>
+
+                    <ul class="navbar-nav">
+                       
+                         <li class="nav-item active">
+                            <asp:LinkButton class="nav-link btn btn-dark  text-white" ID="LinkButton5" runat="server" OnClick="LinkButton5_Click"  >Shop manager Login</asp:LinkButton>
+                        </li>
+                        
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link btn btn-dark  text-white" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" >Customer Login</asp:LinkButton>
+                        </li>
+                      
+                         <li class="nav-item active">
+                            
+                          <asp:LinkButton class="nav-link btn btn-dark  text-white" ID="LinkButton7" runat="server" Visible="False" >Hello user</asp:LinkButton> 
+        
+                        </li> 
+                         <asp:LinkButton class="footerlinks btn btn-dark  text-white" ID="Cart" runat="server" Visible="False" OnClick="LinkButton27_Click"   >  <i class="fa fa-cart-arrow-down" aria-hidden="true"> </i></asp:LinkButton>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link btn btn-dark  text-white" ID="LinkButton3" runat="server" Visible="False" OnClick="LinkButton3_Click" >Logout</asp:LinkButton>
+                        </li>
+
+                         <li class="nav-item dropdown mr-4  ">
+      <a class="nav-link dropdown-toggle    text-white" href="#" id="navbardrop" data-toggle="dropdown"    >
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right  bg-dark text-white mr-4">
+        
+        <asp:LinkButton class="footerlinks  btn btn-default" ID="ApproveShop" runat="server"  Visible="false" OnClick="LinkButton11_Click" >Approve Shop</asp:LinkButton>
+                         
+      
+       <asp:LinkButton class="footerlinks btn btn-dark" ID="RegisterShop" runat="server" Visible="false" OnClick="LinkButton12_Click" >Register Shop</asp:LinkButton>
+                          
+      
+       <asp:LinkButton class="footerlinks btn btn-dark" ID="AddProducts" runat="server" Visible="False" OnClick="LinkButton14_Click"   >Add Products</asp:LinkButton>
+                           
+       
+        <asp:LinkButton class="footerlinks btn btn-dark" ID="CustomerProfile" runat="server"  Visible="False" OnClick="LinkButton8_Click">Customer Profile</asp:LinkButton>
+                           
+      
+         <asp:LinkButton class="footerlinks btn btn-dark btn-sm" ID="ShopManagerProfile" runat="server" Visible="False" OnClick="LinkButton9_Click">Shop Manager Profile</asp:LinkButton>
+                          
+       
+             <asp:LinkButton class="footerlinks btn btn-dark" ID="ViewCustomer" runat="server" Visible="False" OnClick="LinkButton10_Click">View Customer</asp:LinkButton>
+                      
+     
+              <asp:LinkButton class="footerlinks btn btn-dark btn-sm" ID="ViewShopManager" runat="server"  Visible="False" OnClick="LinkButton13_Click">View Shop Manager</asp:LinkButton>
+                     
+       
+          <asp:LinkButton class="footerlinks btn btn-dark" ID="ViewProducts" runat="server" Visible="False" OnClick="LinkButton15_Click">View Products</asp:LinkButton>
+                      
+       
+        
+                            <asp:LinkButton class="footerlinks btn btn-dark" ID="ManageOrder" OnClick="LinkButton16_Click" runat="server" Visible="False" >Manage Order</asp:LinkButton>&nbsp;
+
+       
+         <asp:LinkButton class="footerlinks btn btn-dark" ID="Reports" runat="server" Visible="False" > Reports</asp:LinkButton>&nbsp;
+
+       
+       <asp:LinkButton class="footerlinks btn btn-dark" ID="Feedback" runat="server" Visible="False" OnClick="LinkButton18_Click" >Feedback</asp:LinkButton>&nbsp;
+
+      
+        <asp:LinkButton class="footerlinks btn btn-dark" ID="Ratings" runat="server" Visible="False" OnClick="LinkButton19_Click">Ratings</asp:LinkButton>&nbsp;
+                             
+       
+        <asp:LinkButton class="footerlinks btn btn-dark" ID="complain" runat="server" Visible="False" OnClick="LinkButton2_Click" >complain</asp:LinkButton>&nbsp;
+             
+      
+        <asp:LinkButton class="footerlinks btn btn-dark" ID="location" runat="server" Visible="False" >location</asp:LinkButton>&nbsp;
+                     
+       
+         <asp:LinkButton class="footerlinks btn btn-dark" ID="category" runat="server" Visible="False" OnClick="LinkButton20_Click">category</asp:LinkButton>&nbsp;
+                    
+      
+       <asp:LinkButton class="footerlinks btn btn-dark" ID="Myorder" runat="server" Visible="False" OnClick="LinkButton21_Click" >My order</asp:LinkButton>&nbsp;
+                     
+     
+        <asp:LinkButton class="footerlinks btn btn-dark" ID="checkorderstatus" runat="server" Visible="False" >check order status</asp:LinkButton>&nbsp;
+                     
+      
+         <asp:LinkButton class="footerlinks btn btn-dark" ID="paybill" runat="server" Visible="False" >pay bill</asp:LinkButton>&nbsp;
+                     
+       
+                     
+      
+      </div>
+    </li>
+ 
+<div></div>
+                      
+                    </ul>
+
+
+                        
+  </div>
+                        
+                    
+               
+
+
+            </nav>
+        </div>
+
+
+
+        <!-- Main Content Placeholder -->
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!-- Main Content Placeholder -->
+
+         <!-- Footer -->
+        <footer>
+            <div id="footer1" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <p>
+                            <asp:LinkButton class="footerlinks btn btn-default" ID="LinkButton6" runat="server" OnClick="LinkButton6_Click">Admin Login</asp:LinkButton>
+                            &nbsp;
+                              <asp:LinkButton ID="LinkButton24" class=" footerlinks btn btn-default  " runat="server" OnClick="LinkButton24_Click">Register As Admin</asp:LinkButton>
+
+                            &nbsp;
+                              <asp:LinkButton ID="LinkButton25" class=" footerlinks btn btn-default " runat="server" OnClick="LinkButton25_Click">Register As Shop Manager</asp:LinkButton>
+
+                            &nbsp;
+                              <asp:LinkButton ID="LinkButton26" class=" footerlinks btn btn-default " runat="server" OnClick="LinkButton26_Click">Register As Customer</asp:LinkButton>
+
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks btn btn-default" ID="LinkButton11" runat="server" Visible="False" OnClick="LinkButton11_Click">Approve Shop</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks btn btn-default" ID="LinkButton12" runat="server" Visible="False" OnClick="LinkButton12_Click">Register Shop</asp:LinkButton>
+                            &nbsp;
+                             <asp:LinkButton class="footerlinks btn btn-default" ID="LinkButton14" runat="server" Visible="False" OnClick="LinkButton14_Click">Add Products</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks btn btn-default" ID="LinkButton8" runat="server" Visible="False" OnClick="LinkButton8_Click">Customer Profile</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks btn btn-default" ID="LinkButton9" runat="server" Visible="False" OnClick="LinkButton9_Click">Shop Manager Profile</asp:LinkButton>
+                            &nbsp;
+                             <asp:LinkButton class="footerlinks btn btn-default" ID="LinkButton10" runat="server" Visible="False" OnClick="LinkButton10_Click">View Customer</asp:LinkButton>
+                            &nbsp;
+                             <asp:LinkButton class="footerlinks btn btn-default" ID="LinkButton13" runat="server" Visible="False" OnClick="LinkButton13_Click">View Shop Manager</asp:LinkButton>
+                            &nbsp;
+                             <asp:LinkButton class="footerlinks btn btn-default" ID="LinkButton15" runat="server" Visible="False" OnClick="LinkButton15_Click">View Products</asp:LinkButton>
+
+                            <asp:LinkButton class="footerlinks btn btn-default" ID="LinkButton16" runat="server" Visible="False" OnClick="LinkButton16_Click">Manage Order</asp:LinkButton>&nbsp;
+
+                      <asp:LinkButton class="footerlinks btn btn-default" ID="LinkButton17" runat="server" Visible="False"> Reports</asp:LinkButton>&nbsp;
+
+                      <asp:LinkButton class="footerlinks btn btn-default" ID="LinkButton18" runat="server" Visible="False" OnClick="LinkButton18_Click">Feedback</asp:LinkButton>&nbsp;
+
+                      <asp:LinkButton class="footerlinks btn btn-default" ID="LinkButton19" runat="server" Visible="False" OnClick="LinkButton19_Click">Ratings</asp:LinkButton>&nbsp;
+                      
+                      <asp:LinkButton class="footerlinks btn btn-default" ID="LinkButton2" runat="server" Visible="False" OnClick="LinkButton2_Click">complain</asp:LinkButton>&nbsp;
+                      
+                      <asp:LinkButton class="footerlinks btn btn-default" ID="LinkButton4" runat="server" Visible="False">location</asp:LinkButton>&nbsp;
+                      
+                      <asp:LinkButton class="footerlinks btn btn-default" ID="LinkButton20" runat="server" Visible="False" OnClick="LinkButton20_Click">category</asp:LinkButton>&nbsp;
+                       <asp:LinkButton class="footerlinks btn btn-default" ID="LinkButton21" runat="server" Visible="False" OnClick="LinkButton21_Click">My order</asp:LinkButton>&nbsp;
+                      
+                      <asp:LinkButton class="footerlinks btn btn-default" ID="LinkButton22" runat="server" Visible="False">check order status</asp:LinkButton>&nbsp;
+                      
+                      <asp:LinkButton class="footerlinks btn btn-default" ID="LinkButton23" runat="server" Visible="False">pay bill</asp:LinkButton>&nbsp;
+                        &nbsp;
+                             <asp:LinkButton class="footerlinks btn btn-default" ID="LinkButton27" runat="server" Visible="False" OnClick="LinkButton27_Click">Cart</asp:LinkButton>
+
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+            <div id="footer2" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <p style="color: whitesmoke">© All right Reversed</p>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+        <!-- ./Footer -->
+
+    </form>
+
+</body>
+</html>
